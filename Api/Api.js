@@ -1,3 +1,5 @@
+import { API_KEY } from 'react-native-dotenv';
+
 export const categories = [
   {
     code: "",
@@ -77,12 +79,12 @@ export const sources = [
   },
 ];
 
-export const BASE_URL = "https://saurav.tech/NewsAPI/";
+export const BASE_URL = "https://newsapi.org/v2";
 
 export const getNewsAPI = (category, country = "in") => {
-  return `${BASE_URL}/top-headlines/category/${category}/${country}.json`;
+  return `${BASE_URL}/top-headlines?country=${country}&category=${category}&apiKey=${API_KEY}`;
 };
 
 export const getSourceAPI = (source) => {
-  return `${BASE_URL}/everything/${source}.json`;
+  return `${BASE_URL}/everything?sources=${source}&apiKey=${API_KEY}`;
 };
