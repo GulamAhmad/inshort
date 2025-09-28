@@ -14,14 +14,14 @@ const Context = ({ children }) => {
   const fetchNews = async (reset = category) => {
     const { data } = await axios.get(getNewsAPI(reset));
 
-    setNews(data);
+    setNews(data.articles);
     setIndex(1);
   };
 
   const fetchNewsSource = async () => {
     const { data } = await axios.get(getSourceAPI(source));
 
-    setNews(data);
+    setNews(data.articles);
     setIndex(1);
   };
 
